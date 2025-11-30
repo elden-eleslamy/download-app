@@ -47,32 +47,37 @@
 
     /* Social Icons */
     .social-box{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      justify-content:center;
-      margin-top:20px;
-    }
-    .social-box a{
-      width:55px;
-      height:55px;
-      background:#fff;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:24px;
-      text-decoration:none;
-      color:var(--primary);
-      box-shadow:0 6px 18px rgba(0,0,0,0.08);
-      transition:0.3s;
-    }
-    .social-box a:hover{
-      transform:translateY(-6px);
-      background:var(--primary);
-      color:#fff;
-      box-shadow:0 10px 22px rgba(0,0,0,0.15);
-    }
+  display: flex;
+  flex-wrap: nowrap; /* دايمًا جنب بعض */
+  gap: 10px; /* مسافة بين الأيقونات */
+  justify-content: center; /* توسيط الأيقونات */
+  margin-top: 20px;
+}
+
+.social-box a{
+  flex: 0 1 auto; /* يسمح بالتصغير حسب المساحة */
+  width: clamp(35px, 8vw, 55px);  /* أصغر 35px، أكبر 55px، يتغير مع حجم الشاشة */
+  height: clamp(35px, 8vw, 55px);
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(16px, 4vw, 24px); /* حجم الأيقونة يتقلص مع الشاشة */
+  text-decoration: none;
+  color: var(--primary);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.social-box a:hover{
+  transform: translateY(-4px);
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+
 
   </style>
 </head>
@@ -152,8 +157,7 @@
     const sample = [
       {id:'a1', title:'أذكار الصباح', type:'اذكار الصباح', url:'https://drive.google.com/file/d/1YQERro_8JpC5TmyOnxLKnEQ0OAmIau2O/view?usp=sharing'},
     ];
-document.getElementById("openLink").addEventListener("click", function() {
-    window.open("https://example.com", "_blank");
+
 
     function onFilterChange(){
       const type = document.getElementById('type').value;
