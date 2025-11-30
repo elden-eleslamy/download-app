@@ -6,7 +6,7 @@
   <title>مكتبة الدين الإسلامي الإكترونية </title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{
+     :root{
       --primary: #003A70;
       --secondary: #C9A43A;
       --accent: #4AA9D9;
@@ -14,15 +14,12 @@
       --card:#ffffff;
       --muted:#6b7280;
       --radius:12px;
-      --glass: rgba(255,255,255,0.7);
     }
 
     *{box-sizing:border-box}
     body{margin:0;font-family:'Cairo',sans-serif;background:var(--bg);color:#0b1530}
     header{background:linear-gradient(90deg,var(--primary),#005792);color:#fff;padding:22px 18px}
     .container{max-width:1200px;margin:0 auto;padding:18px}
-    .brand{display:flex;align-items:center;gap:16px}
-    .logo{width:62px;height:62px;border-radius:14px;background:linear-gradient(180deg,#fff0,#fff);display:flex;align-items:center;justify-content:center;border:3px solid rgba(255,255,255,0.12);font-weight:900;color:var(--primary);font-size:22px}
     header h1{margin:0;font-size:20px}
     header p{margin:0;opacity:0.9;font-size:13px}
 
@@ -32,65 +29,99 @@
 
     .section-title{margin:22px 0 8px;font-weight:700;color:var(--primary);display:flex;align-items:center;gap:12px}
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
-    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 20px rgba(6,12,30,0.06);display:flex;flex-direction:column;gap:10px;min-height:140px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(6,12,30,0.06);display:flex;flex-direction:column;gap:10px}
     .card .title{font-size:16px;font-weight:700;color:var(--primary)}
     .card .meta{font-size:13px;color:var(--muted)}
     .card .actions{margin-top:auto;display:flex;gap:8px;align-items:center}
     .btn{padding:9px 12px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
-    .btn.view{background:transparent;border:1px solid rgba(0,0,0,0.06);color:var(--primary)}
     .btn.open{background:var(--secondary);color:#fff}
 
-    .empty{background:linear-gradient(180deg,#fff,#fbfdff);padding:24px;border-radius:12px;border:1px solid #eef3f9;text-align:center;color:var(--muted)}
+    .empty{background:#fff;padding:24px;border-radius:12px;border:1px solid #eef3f9;text-align:center;color:var(--muted)}
     footer{padding:20px;text-align:center;color:var(--muted);font-size:13px;margin-top:28px}
-    .small{font-size:14px;color:var(--muted)}
   </style>
 </head>
 <body>
+
+  <!-- الهيدر -->
   <header>
     <div class="container">
-      <div class="brand">
-        <div>
-          <h1>مكتبة الدين الإسلامي الإكترونية</h1>
-          <p>ملفات إسلامية تخص صفحات الدين الإسلامي</p>
-        </div>
-      </div>
+      <h1>مكتبة الدين الإسلامي الإكترونية</h1>
+      <p>ملفات إسلامية تخص صفحات الدين الإسلامي</p>
 
-      <div class="filters-panel" aria-label="فلاتر البحث">
+      <div class="filters-panel">
         <div class="filter">
-          <label class="small">نوع الملف</label>
+          <label class="small" style="color:black;">نوع الملف</label>
           <select id="type" onchange="onFilterChange()">
             <option value="">الكل</option>
             <option value="اذكار الصباح">أذكار الصباح</option>
-            
           </select>
         </div>
       </div>
     </div>
   </header>
 
+  <!-- المحتوى -->
   <main class="container">
+
     <div class="section-title">النتائج</div>
     <div id="results" class="grid"></div>
-    <div id="empty" class="empty" style="display:none;margin-top:12px">لم يتم العثور على ملفات تطابق معايير البحث.</div>
+    <div id="empty" class="empty" style="display:none;margin-top:12px">
+      لم يتم العثور على ملفات تطابق معايير البحث.
+    </div>
+
+    <!-- روابط تهمك (التصميم الجديد بدون أيقونات) -->
+    <div style="margin-top:40px;">
+      <div class="section-title">روابط تهمك</div>
+<br>
+      <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr));">
+
+        <div class="card" style="padding:25px; border-top:4px solid var(--primary); text-align:center;">
+          <div class="title" style="font-size:18px;">تحميل تطبيق الدين الإسلامي</div>
+          <div class="meta" style="margin-bottom:15px;">نسخة أندرويد</div>
+          <a class="btn open" href="https://www.appcreator24.com/app3122147-rjpy2m" target="_blank" style="width:100%;">الدخول للرابط</a>
+        </div>
+
+        <div class="card" style="padding:25px; border-top:4px solid var(--secondary); text-align:center;">
+          <div class="title" style="font-size:18px;">منصة الفيديوهات الإسلامية</div>
+          <div class="meta" style="margin-bottom:15px;">مشاهدة بدون إعلانات</div>
+          <a class="btn open" href="E" target="_blank" style="width:100%;">الدخول للرابط</a>
+        </div>
+
+        <div class="card" style="padding:25px; border-top:4px solid var(--accent); text-align:center;">
+          <div class="title" style="font-size:18px;">منصة المسابقات الإسلامية</div>
+          <div class="meta" style="margin-bottom:15px;">مسابقات يومية</div>
+          <a class="btn open" href="E" target="_blank" style="width:100%;">الدخول للرابط</a>
+        </div>
+
+      </div>
+    </div>
+
     <footer>© الدين الإسلامي</footer>
   </main>
 
+  <!-- سكريبت -->
   <script>
     const sample = [
-      {id:'a1',title:'أذكار الصباح',type:'اذكار الصباح',url:'https://drive.google.com/file/d/1YQERro_8JpC5TmyOnxLKnEQ0OAmIau2O/view?usp=sharing'},
-     
+      {id:'a1', title:'أذكار الصباح', type:'اذكار الصباح', url:'https://drive.google.com/file/d/1YQERro_8JpC5TmyOnxLKnEQ0OAmIau2O/view?usp=sharing'},
     ];
 
     function onFilterChange(){
       const type = document.getElementById('type').value;
-      const results = sample.filter(item=>{ return !type || item.type===type });
+      const results = sample.filter(item => !type || item.type === type);
 
       const container = document.getElementById('results');
-      container.innerHTML='';
-      if(results.length===0){ document.getElementById('empty').style.display='block'; return; } else document.getElementById('empty').style.display='none';
+      container.innerHTML = '';
 
-      results.forEach(r=>{
-        const card = document.createElement('div'); card.className='card';
+      if(results.length === 0){
+        document.getElementById('empty').style.display = 'block';
+        return;
+      } else {
+        document.getElementById('empty').style.display = 'none';
+      }
+
+      results.forEach(r => {
+        const card = document.createElement('div');
+        card.className = 'card';
         card.innerHTML = `
           <div class="title">${r.title}</div>
           <div class="meta">${r.type}</div>
@@ -101,9 +132,44 @@
       });
     }
 
+// منع كليك يمين
+document.addEventListener("contextmenu", e => e.preventDefault());
+
+// منع النسخ والقص
+document.addEventListener("copy", e => e.preventDefault());
+document.addEventListener("cut", e => e.preventDefault());
+
+// منع تحديد النص
+document.addEventListener("selectstart", e => e.preventDefault());
+
+// منع الاختصارات
+document.onkeydown = function(e) {
+    // Ctrl + U (عرض الكود)
+    if(e.ctrlKey && e.key === "u") return false;
+
+    // F12
+    if(e.key === "F12") return false;
+
+    // Ctrl + Shift + I (Inspect)
+    if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") return false;
+
+    // Ctrl + Shift + J
+    if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "j") return false;
+
+    // Ctrl + C
+    if(e.ctrlKey && e.key.toLowerCase() === "c") return false;
+
+    // Ctrl + S
+    if(e.ctrlKey && e.key.toLowerCase() === "s") return false;
+
+    // Ctrl + A
+    if(e.ctrlKey && e.key.toLowerCase() === "a") return false;
+};
+
+
+
     onFilterChange();
   </script>
+
 </body>
 </html>
-
-
